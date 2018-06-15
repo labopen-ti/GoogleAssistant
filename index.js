@@ -49,7 +49,7 @@ String.prototype.replaceAll = function(search, replacement) {
 	console.log('==============================================================================================');
   next();
 });*/
-app.use(bodyParser.json(), dialog);
+//app.use(bodyParser.json(), dialog);
 
 dialog.intent('is_working', conv => {
 	console.log('INTENT IS_WORKING');
@@ -207,6 +207,16 @@ dialog.intent('recharge_checkout_confirm', conv => {
 //***************************************
 //   APP LISTENING
 //***************************************
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.get('/get_test', (req, res) => {
+	httpGet('https://10.22.238.196:8443/apigw/isalive').then(function(data) {
+		res.status(200).send(data);
+	}, function(err) {
+  		res.status(200).send('Error!!!');
+	});
+});
 
 /*app
   .use(express.static(path.join(__dirname, 'public')))
