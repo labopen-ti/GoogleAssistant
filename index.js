@@ -218,6 +218,10 @@ app.get('/get_test', (req, res) => {
 	});
 });
 
+app.get('/imalive', (req, res) => {
+  	res.status(200).send('Im alive');
+});
+
 /*app
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
