@@ -211,6 +211,7 @@ dialog.intent('recharge_checkout_confirm', conv => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/get_test', (req, res) => {
+	console.log('get_test endpoint');
 	httpGet('https://10.22.238.196:8443/apigw/isalive').then(function(data) {
 		res.status(200).send(data);
 	}, function(err) {
@@ -219,9 +220,11 @@ app.get('/get_test', (req, res) => {
 });
 
 app.get('/imalive', (req, res) => {
+	console.log('Imalive endpoint');
   	res.status(200).send('Im alive');
 });
 app.get('/', (req, res) => {
+	console.log('root endpoint');
   	res.status(200).send('Im alive');
 });
 
