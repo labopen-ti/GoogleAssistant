@@ -208,8 +208,8 @@ dialog.intent('recharge_checkout_confirm', conv => {
 //   APP LISTENING
 //***************************************
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/get_test', (req, res) => {
 	console.log('get_test endpoint');
 	httpGet('https://10.22.238.196:8443/apigw/isalive').then(function(data) {
@@ -217,6 +217,11 @@ app.get('/get_test', (req, res) => {
 	}, function(err) {
   		res.status(200).send('Error!!!');
 	});
+});
+
+app.get('/test_test', (req, res) => {
+	console.log('test_test endpoint');
+  	res.status(200).send('test_test');
 });
 
 app.get('/imalive', (req, res) => {
