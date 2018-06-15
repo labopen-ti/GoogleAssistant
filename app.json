@@ -1,0 +1,8 @@
+{
+  "name": "AssistantTITest",
+  "description": "AssistantTI Test",
+  "repository": "",
+  "logo": "",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
